@@ -11,80 +11,97 @@
 </head>
 
 <body>
+    <div class="header">
+        <div class="top">
+            <h1><b>Donate food to children in need!</b></h1>
+            <br>
+            <button type="button" class="btn btn-secondary" id="cart-btn" data-bs-toggle="collapse" data-bs-target="#cart">Go to cart 🛒</button>
+        </div>  
+        <h3><i>Each meal will be given to a starving child.</i></h3>
+    </div>
+    <div id="cart" class="collapse">
+        <p style="text-align: center; margin-left: 100px; margin-right: 100px; font-size: larger;"><b>Your cart:</b></p>
+        <div id="items-in-cart">
+        </div>
+        <button id="checkout-btn" type="button" class="btn btn-success">Checkout</button>
+        
+    </div>
     <div class="items">
         <div class="col-3 " id="products">
             <p>Chicken breast with potatos</p>
             <img class="food" src="img/chickenbreast.jpg" alt="chicken breast"></img>
             <p>9.59€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Chicken breast with potatos')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Crepes with fruit</p>
             <img class="food" src="img/crepes.jpg" alt="crepes"></img>
             <p>4.99€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Crepes with fruit')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Fried pork with potatos</p>
             <img class="food" src="img/fried_pork.jpg" alt="fried pork"></img>
             <p>12.99€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Fried pork with potatos')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Grilled salmon and asparagus</p>
             <img class="food" src="img/grilled_salmon.jpg" alt="grilled salmon"></img>
             <p>8.20€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Grilled salmon and asparagus')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Meatball spaghetti</p>
             <img class="food" src="img/meatball_spaghetti.jpg" alt="meatball spaghetti"></img>
             <p>7.99€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Meatball spaghetti')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Poke bowl with salmon</p>
             <img class="food" src="img/poke_bowl.jpg" alt="poke bowl"></img>
             <p>13.50€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Poke bowl')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Roasted chicken with fries</p>
             <img class="food" src="img/roasted_chicken.jpg" alt="roasted chicken"></img>
             <p>10.29€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Roasted chicken with fries')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Spinach pasta with sausage</p>
             <img class="food" src="img/spinach_pasta.jpg" alt="spincah pasta"></img>
             <p>9.99€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Spinach pasta with sausage')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Steak with potatos</p>
             <img class="food" src="img/steak.jpg" alt="steak"></img>
             <p>19.99€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Steak with potatos')">Add to cart!</button>
         </div>
         <div class="col-3" id="products">
             <p>Tortillas with shrimp</p>
             <img class="food" src="img/tortillas.jpg" alt="tortillas"></img>
             <p>14.95€</p>
             <br>
-            <button type="button">Add to cart!</button>
+            <button type="button" class="btn btn-dark" onclick="addtocart('Tortillas with shrimp')">Add to cart!</button>
         </div>
     </div>
 <!-- https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp-->
 <!-- https://www.w3schools.com/css/css3_buttons.asp-->
+<!--https://www.w3schools.com/bootstrap5/bootstrap_collapse.php-->
+<!--https://www.w3schools.com/jsref/met_node_appendchild.asp-->
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

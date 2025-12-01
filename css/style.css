@@ -7,6 +7,19 @@
 body{
     background: beige;
 }
+.header{
+    position: relative;
+    text-align: center;
+    padding: 30px;
+}
+.header .top{
+    margin: 0 auto;
+}
+#cart-btn{
+    top: 5%;
+    right: 5%;
+    position: absolute;
+}
 #products{
     border: 5px solid;
     background-color: white;
@@ -16,7 +29,7 @@ body{
 }
 
 .food{
-    width: 300px;
+    width: 100%;
     height: auto;
 }
 
@@ -31,4 +44,20 @@ body{
     color: aliceblue;
     font-size: larger;
     width: 90%;
+}
+#cart{
+    border: 5px solid;
+    position: fixed;
+    top: 10%;
+    right: 1%;
+    background-color:darkgrey;
+}
+#checkout-btn{
+    margin-left: 100px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+#cart p{
+    display: block;
+    margin: 5px 0;
 }
