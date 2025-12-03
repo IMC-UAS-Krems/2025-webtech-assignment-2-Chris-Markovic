@@ -16,9 +16,10 @@ body{
     margin: 0 auto;
 }
 #cart-btn{
-    top: 5%;
+    top: 30px;
     right: 5%;
     position: absolute;
+    display: inline;
 }
 #products{
     border: 5px solid;
@@ -65,6 +66,8 @@ body{
     display: inline;
     margin-bottom: 5px;
 }
-.back-button{
-    
+.backbutton{
+    position: fixed;
+    margin-top: 1px;
+    margin-left: 1px;
 }
