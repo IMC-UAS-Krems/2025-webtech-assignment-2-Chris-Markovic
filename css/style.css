@@ -61,3 +61,10 @@ body{
     display: block;
     margin: 5px 0;
 }
+#total_checkout{
+    display: inline;
+    margin-bottom: 5px;
+}
+.back-button{
+    
+}
