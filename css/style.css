@@ -71,3 +71,54 @@ body{
     margin-top: 1px;
     margin-left: 1px;
 }
+.checkout{
+    text-align: center;
+
+}
+.shipping{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#shipbutton{
+    margin: 10%;
+}
+
+.payment{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#paybutton{
+    margin:10%;
+}
+
+.summary{
+    text-align: center;
+    margin: 5%;
+}
+
+@media (max-width: 768px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  #cart-btn{
+    top: 230px;
+    right: 5px;
+    position: absolute;
+    display: inline;
+    }
+  .backbutton{
+    position: fixed;
+    margin-top: 200px;
+    margin-left: 1px;
+  }
+  #cart{
+    border: 5px solid;
+    position: fixed;
+    top: 35%;
+    right: 1%;
+    background-color:darkgrey;
+    }
+}

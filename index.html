@@ -11,107 +11,237 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="top">
-            <div id="backbutton" class="backbutton" style="display: none;">
-                <button type="button" class="btn btn-secondary"  onclick="back()">Back to home page</button>
+    <main>
+        <section>
+            <div class="header">
+                <div id="checkoutheadline" style="display: none;">
+                    <h1><b>Checkout</b></h1>
+                </div>
+                <div class="top">
+                    <div id="backbutton" class="backbutton" style="display: none;">
+                        <button type="button" class="btn btn-secondary" onclick="back()">Back to home page</button>
+                    </div>
+                    <div id="title">
+                        <h1><b>Donate food to children in need!</b></h1>
+                        <br>
+                        <h3><i>Each meal will be given to a starving child.</i></h3>
+                        <button type="button" class="btn btn-secondary" id="cart-btn" data-bs-toggle="collapse"
+                            data-bs-target="#cart">Go to cart 🛒</button>
+                    </div>
+                </div>
             </div>
-            <h1><b>Donate food to children in need!</b></h1>
-            <br>
-            <button type="button" class="btn btn-secondary" id="cart-btn" data-bs-toggle="collapse" data-bs-target="#cart">Go to cart 🛒</button>
-        </div>  
-        <h3><i>Each meal will be given to a starving child.</i></h3>
-    </div>
-    <div id="cart" class="collapse">
-        <p style="text-align: center; margin-left: 100px; margin-right: 100px; font-size: larger;"><b>Your cart:</b></p>
-        <div id="items-in-cart">
+        </section>
+        <section>
+            <div id="cart" class="collapse">
+                <p style="text-align: center; margin-left: 100px; margin-right: 100px; font-size: larger;"><b>Your
+                        cart:</b>
+                </p>
+                <div id="items-in-cart">
+                </div>
+                <div id="total_checkout">
+                    <p style="color: chartreuse;">Your total is: <span id="total-display"></span>€</p>
+                    <button id="checkout-btn" type="button" class="btn btn-success" onclick="hide()">Checkout</button>
+                </div>
+            </div>
+            <div class="checkout" id="checkout" style="display: none;">
+                <!--action="javascript:menofunkcie()" taken from https://stackoverflow.com/questions/683498/calling-javascript-from-a-html-form-->
+                <!--https://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp-->
+                <div class="shipping" id="shipping" style="display: none;">
+                    <h2><b>Shipping information</b></h2>
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="validationCustom02" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom03" class="form-label">City</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom03" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid country.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom03" class="form-label">Zip code</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid zip code.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Phone number</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid phone number.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Email adress</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email adress.
+                            </div>
+                        </div>
+                    </form>
+                    <button  type="button" class="btn btn-secondary" id="shipbutton" onclick="hideshipping()">Proceed to payment</button>
+                </div>
+                <div class="payment" id="payment" class="display:none">
+                    <h2><b>Payment information</b></h2>
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-12">
+                            <label for="validationCustom01" class="form-label">Name on card</label>
+                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <div class="valid-feedback">
+                                 Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="validationCustom01" class="form-label">Card number</label>
+                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">Expiration date</label>
+                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">Security code(CVV)</label>
+                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </form>
+                    <button  type="button" class="btn btn-info" id="paybutton" onclick="summary()">Pay</button>
+                </div>
+            </div>
+            <div class="summary" id="summary" style="display:none">
+                <p>Payment successful. You will recieve confirmation of your order via email.</p>
+                <h1><b>Summary of your order:</b></h1>
+            </div>
+        </section>
+        <section>
+            <div id="items" class="items">
+                <div class="col-3" id="products">
+                    <p>Chicken breast with potatos</p>
+                    <img class="food" src="img/chickenbreast.jpg" alt="chicken breast"></img>
+                    <p>9.50€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Chicken breast with potatos - 9.50€')">Add to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Crepes with fruit</p>
+                    <img class="food" src="img/crepes.jpg" alt="crepes"></img>
+                    <p>5.00€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark" onclick="addtocart('Crepes with fruit - 5.00€')">Add to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Fried pork with potatos</p>
+                    <img class="food" src="img/fried_pork.jpg" alt="fried pork"></img>
+                    <p>12.50€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Fried pork with potatos - 12.50€')">Add
+                        to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Grilled salmon and asparagus</p>
+                    <img class="food" src="img/grilled_salmon.jpg" alt="grilled salmon"></img>
+                    <p>8.20€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Grilled salmon and asparagus - 8.20€')">Add
+                        to cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Meatball spaghetti</p>
+                    <img class="food" src="img/meatball_spaghetti.jpg" alt="meatball spaghetti"></img>
+                    <p>7.90€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark" onclick="addtocart('Meatball spaghetti - 7.90€')">Add to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Poke bowl with salmon</p>
+                    <img class="food" src="img/poke_bowl.jpg" alt="poke bowl"></img>
+                    <p>13.50€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark" onclick="addtocart('Poke bowl - 13.50€')">Add to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Roasted chicken with fries</p>
+                    <img class="food" src="img/roasted_chicken.jpg" alt="roasted chicken"></img>
+                    <p>10.20€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Roasted chicken with fries - 10.20€')">Add to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Spinach pasta with sausage</p>
+                    <img class="food" src="img/spinach_pasta.jpg" alt="spincah pasta"></img>
+                    <p>9.90€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Spinach pasta with sausage - 9.90€')">Add
+                        to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Steak with potatos</p>
+                    <img class="food" src="img/steak.jpg" alt="steak"></img>
+                    <p>19.80€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark" onclick="addtocart('Steak with potatos - 19.80€')">Add to
+                        cart!</button>
+                </div>
+                <div class="col-3" id="products">
+                    <p>Tortillas with shrimp</p>
+                    <img class="food" src="img/tortillas.jpg" alt="tortillas"></img>
+                    <p>14.90€</p>
+                    <br>
+                    <button type="button" class="btn btn-dark" onclick="addtocart('Tortillas with shrimp - 14.90€')">Add
+                        to
+                        cart!</button>
+                </div>
+            </div>
+            <div class="checkout-page" id="checkout-page">
+        </section>
         </div>
-        <div id="total_checkout">
-            <p style="color: chartreuse;">Your total is: <span id="total-display"></span>€</p>
-            <button id="checkout-btn" type="button" class="btn btn-success" onclick="hide()">Checkout</button>
-        </div>
-    </div>
-    <div id="items" class="items">
-        <div class="col-3 " id="products">
-            <p>Chicken breast with potatos</p>
-            <img class="food" src="img/chickenbreast.jpg" alt="chicken breast"></img>
-            <p>9.59€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Chicken breast with potatos - 9.59€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Crepes with fruit</p>
-            <img class="food" src="img/crepes.jpg" alt="crepes"></img>
-            <p>4.99€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Crepes with fruit - 4.99€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Fried pork with potatos</p>
-            <img class="food" src="img/fried_pork.jpg" alt="fried pork"></img>
-            <p>12.99€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Fried pork with potatos - 12.99€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Grilled salmon and asparagus</p>
-            <img class="food" src="img/grilled_salmon.jpg" alt="grilled salmon"></img>
-            <p>8.20€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Grilled salmon and asparagus - 8.20€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Meatball spaghetti</p>
-            <img class="food" src="img/meatball_spaghetti.jpg" alt="meatball spaghetti"></img>
-            <p>7.99€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Meatball spaghetti - 7.99€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Poke bowl with salmon</p>
-            <img class="food" src="img/poke_bowl.jpg" alt="poke bowl"></img>
-            <p>13.50€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Poke bowl - 13.50€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Roasted chicken with fries</p>
-            <img class="food" src="img/roasted_chicken.jpg" alt="roasted chicken"></img>
-            <p>10.29€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Roasted chicken with fries - 10.29€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Spinach pasta with sausage</p>
-            <img class="food" src="img/spinach_pasta.jpg" alt="spincah pasta"></img>
-            <p>9.99€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Spinach pasta with sausage - 9.99€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Steak with potatos</p>
-            <img class="food" src="img/steak.jpg" alt="steak"></img>
-            <p>19.99€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Steak with potatos - 19.99€')">Add to cart!</button>
-        </div>
-        <div class="col-3" id="products">
-            <p>Tortillas with shrimp</p>
-            <img class="food" src="img/tortillas.jpg" alt="tortillas"></img>
-            <p>14.95€</p>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="addtocart('Tortillas with shrimp - 14.99€')">Add to cart!</button>
-        </div>
-    </div>
-    <div class="checkout-page" id="checkout-page">
-
-    </div>
-<!-- https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp-->
-<!-- https://www.w3schools.com/css/css3_buttons.asp-->
-<!--https://www.w3schools.com/bootstrap5/bootstrap_collapse.php-->
-<!--https://www.w3schools.com/jsref/met_node_appendchild.asp-->
-    <script src="js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp-->
+        <!-- https://www.w3schools.com/css/css3_buttons.asp-->
+        <!--https://www.w3schools.com/bootstrap5/bootstrap_collapse.php-->
+        <!--https://www.w3schools.com/jsref/met_node_appendchild.asp-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </main>
 </body>
 
 <footer>
