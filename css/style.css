@@ -49,9 +49,10 @@ body{
 #cart{
     border: 5px solid;
     position: fixed;
+    border-color:darkgray;
     top: 10%;
     right: 1%;
-    background-color:darkgrey;
+    background-color:grey;
 }
 #checkout-btn{
     margin-left: 100px;
@@ -99,9 +100,10 @@ body{
 }
 
 .summarybox{
-    border: 10px solid black;
+    border: 10px solid gainsboro;
     margin-left: 20%;
     margin-right: 20%;
+    background-color: darkgrey;
 }
 
 @media (max-width: 768px) {
@@ -128,5 +130,10 @@ body{
     right: 1%;
     background-color:darkgrey;
     }
-
+    .summarybox{
+    border: 10px solid gainsboro;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: darkgrey;
+}
 }

@@ -152,11 +152,17 @@ function showSummary(){
     itemsinsummary.innerHTML = "";
 
     let cartitems = document.getElementById("items-in-cart").children;
-    for (let i = 0; i < cartitems.length; i += 2) {
+   let i = 0;
+
+    while (i < cartitems.length) {
         const div = document.createElement("div");
         div.innerText = cartitems[i].innerText;
         itemsinsummary.appendChild(div);
+        i = i + 2;
     }
+   
+
+   
 }
 
 
