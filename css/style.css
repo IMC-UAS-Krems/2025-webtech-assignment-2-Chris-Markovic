@@ -98,6 +98,12 @@ body{
     margin: 5%;
 }
 
+.summarybox{
+    border: 10px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 @media (max-width: 768px) {
   .col-3 {
     flex: 0 0 50%;
@@ -110,9 +116,10 @@ body{
     display: inline;
     }
   .backbutton{
-    position: fixed;
-    margin-top: 200px;
-    margin-left: 1px;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 20px;
   }
   #cart{
     border: 5px solid;
@@ -121,4 +128,5 @@ body{
     right: 1%;
     background-color:darkgrey;
     }
+
 }

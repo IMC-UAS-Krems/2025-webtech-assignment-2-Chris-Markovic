@@ -14,12 +14,12 @@
     <main>
         <section>
             <div class="header">
-                <div id="checkoutheadline" style="display: none;">
-                    <h1><b>Checkout</b></h1>
-                </div>
                 <div class="top">
                     <div id="backbutton" class="backbutton" style="display: none;">
                         <button type="button" class="btn btn-secondary" onclick="back()">Back to home page</button>
+                    </div>
+                    <div id="checkoutheadline" style="display: none;">
+                        <h1><b>Checkout</b></h1>
                     </div>
                     <div id="title">
                         <h1><b>Donate food to children in need!</b></h1>
@@ -43,127 +43,123 @@
                     <button id="checkout-btn" type="button" class="btn btn-success" onclick="hide()">Checkout</button>
                 </div>
             </div>
+            <!--action="javascript:menofunkcie()" taken from https://stackoverflow.com/questions/683498/calling-javascript-from-a-html-form-->
+            <!--https://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp-->
             <div class="checkout" id="checkout" style="display: none;">
-                <!--action="javascript:menofunkcie()" taken from https://stackoverflow.com/questions/683498/calling-javascript-from-a-html-form-->
-                <!--https://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp-->
                 <div class="shipping" id="shipping" style="display: none;">
-                    <h2><b>Shipping information</b></h2>
-                    <form class="row g-3 needs-validation" novalidate>
+                    <h2><b>Shipping Information</b></h2>
+                    <form id="shippingForm" class="row g-3 needs-validation" novalidate>
                         <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label">First name</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="firstName" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstName" required pattern="[A-Za-z ]+" required>
+                            <div class="valid-feedback">Looks good!</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="validationCustom02" class="form-label">Last name</label>
-                            <input type="text" class="form-control" id="validationCustom02" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lastName" required pattern="[A-Za-z ]+" required>
+                            <div class="valid-feedback">Looks good!</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="validationCustom03" class="form-label">City</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid city.
-                            </div>
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" required pattern="[A-Za-z ]+" required>
+                            <div class="invalid-feedback">Please provide a valid city.</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="validationCustom03" class="form-label">Country</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid country.
-                            </div>
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="country" required pattern="[A-Za-z ]+" required>
+                            <div class="invalid-feedback">Please provide a valid country.</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="validationCustom03" class="form-label">Zip code</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid zip code.
-                            </div>
+                            <label for="zip" class="form-label">Zip code</label>
+                            <input type="text" class="form-control" id="zip" required pattern="[0-9 ]{4,10}" required>
+                            <div class="invalid-feedback">Please provide a valid zip code.</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="validationCustom03" class="form-label">Phone number</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid phone number.
-                            </div>
+                            <label for="phone" class="form-label">Phone number</label>
+                            <input type="text" class="form-control" id="phone" required pattern="[0-9 ]{6,15}" required>
+                            <div class="invalid-feedback">Please provide a valid phone number.</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="validationCustom03" class="form-label">Email adress</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid email adress.
-                            </div>
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-secondary">Proceed to Payment</button>
                         </div>
                     </form>
-                    <button  type="button" class="btn btn-secondary" id="shipbutton" onclick="hideshipping()">Proceed to payment</button>
                 </div>
-                <div class="payment" id="payment" class="display:none">
-                    <h2><b>Payment information</b></h2>
-                    <form class="row g-3 needs-validation" novalidate>
+                <div class="payment" id="payment" style="display: none;">
+                    <h2><b>Payment Information</b></h2>
+                    <form id="paymentForm" class="row g-3 needs-validation" novalidate>
                         <div class="col-md-12">
-                            <label for="validationCustom01" class="form-label">Name on card</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
-                            <div class="valid-feedback">
-                                 Looks good!
-                            </div>
+                            <label for="cardName" class="form-label">Name on Card</label>
+                            <input type="text" class="form-control" id="cardName" required pattern="[A-Za-z ]+" required>
+                            <div class="valid-feedback">Looks good!</div>
                         </div>
                         <div class="col-md-12">
-                            <label for="validationCustom01" class="form-label">Card number</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="cardNumber" class="form-label">Card Number</label>
+                            <input type="text" class="form-control" id="cardNumber" required pattern="[0-9 ]{13,19}" required>
+                            <div class="valid-feedback">Looks good!</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label">Expiration date</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="expiry" class="form-label">Expiration Date</label>
+                            <input type="text" class="form-control" id="expiry" placeholder="MM/YY"  required pattern="[0-9]{4}" required>
+                            <div class="valid-feedback">Looks good!</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label">Security code(CVV)</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cvv" required pattern="[0-9 ]{3,4}" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-info">
+                                Pay: <span id="pay-total"></span>€
+                            </button>
                         </div>
                     </form>
-                    <button  type="button" class="btn btn-info" id="paybutton" onclick="summary()">Pay</button>
                 </div>
             </div>
-            <div class="summary" id="summary" style="display:none">
-                <p>Payment successful. You will recieve confirmation of your order via email.</p>
-                <h1><b>Summary of your order:</b></h1>
+            <div class="summary" id="summary" style="display:none;">
+                <h2>Payment Successful!</h2>
+                <p>You will receive confirmation via email.</p>
+                <h3>Summary of Your Order:</h3>
+                <div id="summarybox" class="summarybox">
+                    <div id="itemsinsummary"></div>
+                    <p style="color:green">Subtotal: <span id="summary-total"></span>€</p>
+                    <p style="color:blue">Tax (20%): +<span id="tax"></span>€</p>
+                    <p id="discounttext" style="color:darkgoldenrod; display: none;">Discount (15%): -<span id="discount"></span>€</p>
+                    <p style="color:darkgreen;">Total: <span id="totalwithtax"></span>€</p>
+                </div>
             </div>
+
         </section>
         <section>
             <div id="items" class="items">
                 <div class="col-3" id="products">
                     <p>Chicken breast with potatos</p>
                     <img class="food" src="img/chickenbreast.jpg" alt="chicken breast"></img>
-                    <p>9.50€</p>
+                    <p>9.50€ (+Tax)</p>
                     <br>
                     <button type="button" class="btn btn-dark"
-                        onclick="addtocart('Chicken breast with potatos - 9.50€')">Add to
+                        onclick="addtocart('Chicken breast with potatos - 9.50€')">Add
+                        to
                         cart!</button>
                 </div>
                 <div class="col-3" id="products">
                     <p>Crepes with fruit</p>
                     <img class="food" src="img/crepes.jpg" alt="crepes"></img>
-                    <p>5.00€</p>
+                    <p>5.00€ (+Tax)</p>
                     <br>
-                    <button type="button" class="btn btn-dark" onclick="addtocart('Crepes with fruit - 5.00€')">Add to
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Crepes with fruit - 5.00€')">Add
+                        to
                         cart!</button>
                 </div>
                 <div class="col-3" id="products">
                     <p>Fried pork with potatos</p>
                     <img class="food" src="img/fried_pork.jpg" alt="fried pork"></img>
-                    <p>12.50€</p>
+                    <p>12.50€ (+Tax)</p>
                     <br>
                     <button type="button" class="btn btn-dark"
                         onclick="addtocart('Fried pork with potatos - 12.50€')">Add
@@ -173,7 +169,7 @@
                 <div class="col-3" id="products">
                     <p>Grilled salmon and asparagus</p>
                     <img class="food" src="img/grilled_salmon.jpg" alt="grilled salmon"></img>
-                    <p>8.20€</p>
+                    <p>8.20€ (+Tax)</p>
                     <br>
                     <button type="button" class="btn btn-dark"
                         onclick="addtocart('Grilled salmon and asparagus - 8.20€')">Add
@@ -182,32 +178,36 @@
                 <div class="col-3" id="products">
                     <p>Meatball spaghetti</p>
                     <img class="food" src="img/meatball_spaghetti.jpg" alt="meatball spaghetti"></img>
-                    <p>7.90€</p>
+                    <p>7.90€ (+Tax)</p>
                     <br>
-                    <button type="button" class="btn btn-dark" onclick="addtocart('Meatball spaghetti - 7.90€')">Add to
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Meatball spaghetti - 7.90€')">Add
+                        to
                         cart!</button>
                 </div>
                 <div class="col-3" id="products">
                     <p>Poke bowl with salmon</p>
                     <img class="food" src="img/poke_bowl.jpg" alt="poke bowl"></img>
-                    <p>13.50€</p>
+                    <p>13.50€ (+Tax)</p>
                     <br>
-                    <button type="button" class="btn btn-dark" onclick="addtocart('Poke bowl - 13.50€')">Add to
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Poke bowl - 13.50€')">Add to
                         cart!</button>
                 </div>
                 <div class="col-3" id="products">
                     <p>Roasted chicken with fries</p>
                     <img class="food" src="img/roasted_chicken.jpg" alt="roasted chicken"></img>
-                    <p>10.20€</p>
+                    <p>10.20€ (+Tax)</p>
                     <br>
                     <button type="button" class="btn btn-dark"
-                        onclick="addtocart('Roasted chicken with fries - 10.20€')">Add to
+                        onclick="addtocart('Roasted chicken with fries - 10.20€')">Add
+                        to
                         cart!</button>
                 </div>
                 <div class="col-3" id="products">
                     <p>Spinach pasta with sausage</p>
                     <img class="food" src="img/spinach_pasta.jpg" alt="spincah pasta"></img>
-                    <p>9.90€</p>
+                    <p>9.90€ (+Tax)</p>
                     <br>
                     <button type="button" class="btn btn-dark"
                         onclick="addtocart('Spinach pasta with sausage - 9.90€')">Add
@@ -217,17 +217,20 @@
                 <div class="col-3" id="products">
                     <p>Steak with potatos</p>
                     <img class="food" src="img/steak.jpg" alt="steak"></img>
-                    <p>19.80€</p>
+                    <p>19.80€ (+Tax)</p>
                     <br>
-                    <button type="button" class="btn btn-dark" onclick="addtocart('Steak with potatos - 19.80€')">Add to
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Steak with potatos - 19.80€')">Add
+                        to
                         cart!</button>
                 </div>
                 <div class="col-3" id="products">
                     <p>Tortillas with shrimp</p>
                     <img class="food" src="img/tortillas.jpg" alt="tortillas"></img>
-                    <p>14.90€</p>
+                    <p>14.90€ (+Tax)</p>
                     <br>
-                    <button type="button" class="btn btn-dark" onclick="addtocart('Tortillas with shrimp - 14.90€')">Add
+                    <button type="button" class="btn btn-dark"
+                        onclick="addtocart('Tortillas with shrimp - 14.90€')">Add
                         to
                         cart!</button>
                 </div>
