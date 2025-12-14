@@ -11,7 +11,7 @@ let discount = 0;
 function addtocart(itemName){
     console.log("Added to cart")
     let cartitems = document.getElementById("items-in-cart")
-    const item = document.createElement("div") // use div instead of item tag
+    const item = document.createElement("div")
     item.innerText = itemName;
     let price = itemName.split("-")[1].trim();
     
@@ -30,7 +30,7 @@ function total() {
 }
 
 //https://getbootstrap.com/docs/5.3/forms/validation/
-//classmate helped me alter the code from the website to fit my code and to fix the site refreshing when clicking a button(submitting)
+//Took the code from the website above and changed it so that the page doesn t reload when clicking the butoon
 
 (() => {
     'use strict';
@@ -38,14 +38,14 @@ function total() {
 
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
-            event.preventDefault(); // STOP page reload
+            event.preventDefault();
             event.stopPropagation();
 
             if (form.checkValidity()) {
                 if (form.id === "shippingForm") {
                     hideshipping();
                 } else if (form.id === "paymentForm") {
-                    showSummary(); // show summary after Pay
+                    showSummary();
                 }
             }
 
@@ -173,7 +173,7 @@ function updatePayTotal(){
 function addtosummary(itemName){
     console.log("Added to summary")
     let itemsinsummary = document.getElementById("itemsinsummary");
-    const item = document.createElement("div"); // use div
+    const item = document.createElement("div");
     item.innerText = itemName;
 
     itemsinsummary.appendChild(item);
